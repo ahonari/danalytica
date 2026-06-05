@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<!--
-  Design choice: "Editorial Dark + Teal Accent" + Particle Network Hero.
-  Decision to add particle network: YES.
-  Rationale: The teal (#05F7E8 ~ #00cccc) particles on the dark (#091f26) background
-  perfectly echo the logo's data-graph motif (nodes + lines). The mouse-follow interaction
-  makes the hero feel AI-alive without distracting from the headline. Canvas sits behind
-  all content via z-index. jQuery dependency removed — rewritten in vanilla JS.
-  Logos: Danalytica-logo.svg (nav, full wordmark) + Danalyticalogo.svg (footer, compact).
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Danalytica — AI, ML & Data Engineering for Startups</title>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Danalytica",
+    "legalName": "Danalytica",
+    "url": "https://danalytica.com",
+    "logo": "https://danalytica.com/logo.svg",
+    "email": "hello@danalytica.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Prinses Alexialaan 81",
+      "postalCode": "3708 XE",
+      "addressLocality": "Zeist",
+      "addressCountry": "NL"
+    },
+    "vatID": "NL003340705B42",
+    "taxID": "67646344",
+    "sameAs": [
+      "https://www.linkedin.com/company/danalytica"
+    ],
+    "description": "AI, ML & Data Engineering consultancy helping startups build intelligent solutions. We specialize in LLM fine-tuning, data pipelines, and custom AI agents.",
+    "foundingDate": "2017",
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Engineering",
+      "LLM Fine-tuning",
+      "Startup Consulting",
+      "Data Analytics"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@danalytica.com",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Dutch"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+  }
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
