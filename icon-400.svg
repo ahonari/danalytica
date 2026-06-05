@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#005c77"/>
+      <stop offset="100%" stop-color="#00cccc"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="60" fill="url(#bg)"/>
+  <!-- D letter scaled up -->
+  <g transform="translate(32, 72) scale(6.88)">
+    <path d="M8.25 26.0L0.11 25.96L0.23 0.05L8.38 0.09C11.01 0.10 13.35 0.66 15.39 1.75C17.42 2.85 19.02 4.37 20.17 6.32C21.33 8.25 21.9 10.51 21.88 13.1C21.88 15.69 21.28 17.95 20.11 19.89C18.94 21.81 17.33 23.31 15.28 24.38C13.23 25.46 10.89 25.99 8.25 26.0ZM8.36 3.23L3.51 3.21L3.42 22.81L8.27 22.83C10.31 22.84 12.1 22.46 13.62 21.68C15.18 20.87 16.39 19.74 17.25 18.29C18.13 16.82 18.58 15.08 18.59 13.08C18.6 11.06 18.17 9.32 17.3 7.86C16.45 6.4 15.25 5.28 13.71 4.48C12.19 3.66 10.4 3.24 8.36 3.23Z" fill="white"/>
+  </g>
+  <!-- A strokes -->
+  <line x1="208" y1="352" x2="264" y2="48" stroke="#FF9F00" stroke-width="16" stroke-linecap="round"/>
+  <line x1="268" y1="48" x2="328" y2="352" stroke="#FF9F00" stroke-width="16" stroke-linecap="round"/>
+  <!-- Nodes -->
+  <circle cx="266" cy="48"  r="22" fill="white" stroke="#FF9F00" stroke-width="10"/>
+  <circle cx="208" cy="348" r="20" fill="white" stroke="#FF9F00" stroke-width="10"/>
+  <circle cx="328" cy="348" r="20" fill="white" stroke="#FF9F00" stroke-width="10"/>
+  <circle cx="292" cy="184" r="16" fill="white" stroke="#FF9F00" stroke-width="8"/>
+</svg>
