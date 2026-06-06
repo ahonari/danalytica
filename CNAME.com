@@ -1,1 +1,0 @@
-danalytica.com
