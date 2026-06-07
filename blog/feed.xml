@@ -6,15 +6,15 @@
     <description>Practical writing on AI, ML, data engineering and building AI-native products.</description>
     <language>en-gb</language>
     <atom:link href="https://danalytica.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 07 Jun 2026 17:55:35 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 23:04:38 +0000</lastBuildDate>
 
     <item>
-      <title>Building RAG Systems That Actually Work in Production</title>
-      <link>https://danalytica.com/blog/posts/building-rag-systems-that-actually-work.html</link>
-      <guid isPermaLink="true">https://danalytica.com/blog/posts/building-rag-systems-that-actually-work.html</guid>
-      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <category>AI Engineering</category>
-      <description>Most RAG demos look great in notebooks. Here's what breaks in production and how we fix it.</description>
+      <title>Bridging Information and Language Barriers: A Dual-Path Media Approach to Immigrant Integration</title>
+      <link>https://danalytica.com/blog/posts/bridging-information-language-barriers.html</link>
+      <guid isPermaLink="true">https://danalytica.com/blog/posts/bridging-information-language-barriers.html</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+      <category>Integration Research</category>
+      <description>A research note on how media consumption and language acquisition together shape immigrant integration outcomes.</description>
     </item>
     <item>
       <title>Real-Time ML Pipelines with Kafka and River</title>

@@ -15,6 +15,7 @@ import os
 import re
 from datetime import datetime
 from email.utils import format_datetime, localtime
+from datetime import timezone
 
 SITE_URL    = "https://danalytica.com"
 BLOG_URL    = SITE_URL + "/blog/"
@@ -104,7 +105,7 @@ def generate():
             desc     = escape_xml(p["excerpt"])
         )
 
-    build_date = datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0000")
+    build_date = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
 
     feed = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
