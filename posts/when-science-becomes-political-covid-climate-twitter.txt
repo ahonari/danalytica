@@ -1,0 +1,145 @@
+---
+title: "When Science Becomes Political: Analyzing COVID‑19 and Climate Change Discourse on Twitter"
+date: 2025-05-15
+category: Research Engineering
+tags: [Data Scraping, Text Classification, Research Support, Academic collaboration, Social Media Analysis, Disinformation]
+excerpt: "How a research team used computational methods to understand when the politicization of science on social media becomes problematic for democracy — and how we helped them get the data."
+readTime: 8 min
+author: Danalytica Team
+---
+
+> **📄 This post is based on:**  
+> *"When science becomes political: A mixed‑methods analysis of COVID‑19 and climate change discourse on Twitter"* (2024)  
+> [Read the full paper in *Public Understanding of Science* →](https://journals.sagepub.com/doi/10.1177/09636625231216054)
+
+## The Broader Context: Science, Politics, and Social Media
+
+We live in "knowledge societies" where science and politics constantly interact. Public health advice, climate policy, vaccination campaigns — all rely on scientific evidence. But when science enters political debate, it also becomes *politicized*.
+
+Not all politicization is bad. In a democracy, some degree of contestation is necessary for science‑informed policymaking and public debate.
+
+But where is the line?
+
+- When does legitimate critique of science‑informed policy turn into **ideological science rejection**?
+- How can we distinguish healthy democratic debate from **disinformation and misinformation**?
+
+During the COVID‑19 pandemic, these questions became urgent. Public discourse about masks, vaccines, and lockdowns was everywhere. And interestingly, much of that discourse became **discursively linked** with another already‑politicized science issue: **climate change**.
+
+The research team (including a collaboration with Utrecht University) wanted to understand this phenomenon systematically.
+
+## The Scientific Problem
+
+The study investigates how scientific knowledge is politicized on Twitter. Specifically, it asks:
+
+- What are the **discursive modes** of online politicization?
+- How do these modes relate to different **online issue publics** (commun organised around specific topics)?
+- And crucially: when does politicization become *problematic* in a democratic context?
+
+The research distinguishes between:
+| Type | Description |
+|------|-------------|
+| **Politicization that contests science‑informed policy** | Legitimate democratic debate |
+| **Ideological science rejection** | Dismissing science itself, not just policy |
+
+This framing moves beyond the simplistic "information vs. disinformation" binary — a more nuanced and, for the social sciences, more useful approach.
+
+## The Methodological Challenge
+
+To answer these questions empirically, the team needed a **large, structured dataset** of Twitter discourse covering both COVID‑19 and climate change — and crucially, **tweets that explicitly linked the two issues**.
+
+**Why this is difficult:**
+
+| Challenge | Why it matters |
+|-----------|----------------|
+| **Scale** | Thousands of relevant posts, not a handful |
+| **Noise** | Most tweets are irrelevant, spam, or off‑topic |
+| **Linking detection** | Identifying tweets that connect COVID‑19 AND climate change requires more than simple keywords |
+| **Time sensitivity** | Discourse evolves; collection had to cover specific windows |
+| **Ethics & platform limits** | API restrictions, rate limits, terms of service |
+| **Manual alternative** | A researcher manually searching and copying would take **months** — and still miss patterns |
+
+The alternative — manual collection and coding — would not only be slow but also introduce bias and limit replicability.
+
+## The Methodological Solution (What Danalytica Built)
+
+We designed and implemented an end‑to‑end data engineering pipeline tailored to the research question.
+
+### Data Gathering
+
+Using Twitter API (respecting academic track terms), we:
+
+- **Identified relevant keywords and hashtags:** covering COVID‑19, climate change, and their intersection.
+- **Collected tweets over defined time windows:** aligned with key political and scientific events.
+- **Captured rich metadata:** author, timestamp, retweet/quote/like counts, thread context, and reply networks.
+
+The raw dataset ran into tens of thousands of tweets — far beyond what any manual effort could achieve.
+
+### Structuring & Cleaning
+
+Raw Twitter data is notoriously messy. We built a cleaning pipeline to:
+
+- Remove duplicates, retweets, and near‑duplicates (reducing noise without losing conversational context).
+- Filter spam and clearly irrelevant content using rule‑based heuristics.
+- Normalise text (consistent casing, URL/mention handling, emoji preservation).
+- Extract entities (user mentions, hashtags, URLs) as separate fields for network analysis.
+- Flag language to allow later stratification.
+
+### ML Classification for Thematic Sorting
+
+The core analytical task required classifying tweets not by simple keywords, but by **discursive mode** — e.g., "contesting policy" vs. "rejecting science itself," and identifying tweets that explicitly **linked COVID‑19 and climate change**.
+
+We trained a supervised classifier using:
+
+- A small, manually labelled seed set provided by the researcher (based on qualitative reading of a few hundred tweets).
+- TF‑IDF features plus lightweight embeddings (fast, interpretable, and sufficient for this task).
+- **Active learning:** the model flagged uncertain cases; the researcher labelled a small batch; the model retrained — repeated over five cycles.
+
+The final classifier achieved **reliable accuracy (>85%)** on a held‑out test set, allowing the research team to:
+
+- Categorise the entire dataset of tens of thousands of tweets in **minutes**, not months.
+- Identify which tweets linked COVID‑19 and climate change, and classify their political mode.
+- Produce replicable, transparent results — every step documented.
+
+## What Was Achieved
+
+With a clean, structured, and categorised dataset, the research team could:
+
+- **Identify different discursive modes of politicization** — showing that some critiques target policy while others reject science itself.
+- **Map how these modes relate to different online issue publics** (communities organised around climate vs. COVID vs. politics).
+- **Provide empirical evidence** for when politicization of science becomes problematic in a democratic context.
+- **Move beyond the "information vs. disinformation" binary** — offering a more nuanced framework for future research.
+
+The alternative — manual collection and thematic coding — would have taken an estimated **3–4 months** of a PhD researcher's time. Our pipeline reduced that to **under three weeks**, including iteration and refinement.
+
+> *More importantly, it freed the researchers to focus on interpretation, theory building, and public debate — not wrestling with API rate limits and deduplication logic.*
+
+## Key Takeaways for Research Teams
+
+If you are an academic working with social media data, here are actionable lessons from this collaboration:
+
+| Lesson | Why it matters |
+|--------|----------------|
+| **Start with a small qualitative sample** | It helps you define categories before scaling up. |
+| **Use active learning** | You don't need massive labelled datasets; a few hundred seed examples + iterative refinement can reach good accuracy. |
+| **Build a cleaning pipeline before scaling** | Dirty data at scale is paralyzing — clean as you go. |
+| **Document every transformation** | Replicability is the currency of good science. |
+| **Partner with engineers early** | A week of engineering can save months of manual labour — and enable analysis that would otherwise be impossible. |
+
+## Citation
+
+If you use or reference this work, please cite the original paper:
+
+> **Alinejad D and Honari A** (2024). When science becomes political: A mixed‑methods analysis of COVID‑19 and climate change discourse on Twitter. *Public Understanding of Science*33(4):
+396–413.  
+> DOI: [10.1177/09636625231216054](https://doi.org/10.1177/09636625231216054)
+
+
+## Want to Collaborate on Research Engineering?
+
+We work with research teams who have important questions and messy data — Twitter, archival documents, survey data at scale, or other unstructured sources. We build the pipelines so you can focus on the science.
+
+[Contact us →](mailto:hello@danalytica.com)
+
+---
+
+*This is the first post in our series on academic data engineering. The next post will cover our collaboration with the University of Toronto on OCR and network analysis from handwritten journal archives.*
