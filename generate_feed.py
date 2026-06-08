@@ -69,9 +69,9 @@ def generate():
         return
 
     for fname in os.listdir(POSTS_DIR):
-        if not fname.endswith(".md"):
+        if not fname.endswith(".txt"):
             continue
-        slug = fname[:-3]
+        slug = fname[:-4]
         with open(os.path.join(POSTS_DIR, fname), encoding="utf-8") as f:
             content = f.read()
         meta, body = parse_front_matter(content)
