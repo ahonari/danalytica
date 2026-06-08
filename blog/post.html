@@ -232,10 +232,8 @@ function formatDate(str) {
 }
 
 function getSlugFromURL() {
-  // Works for /blog/posts/my-slug.html
-  var parts = window.location.pathname.split("/");
-  var file = parts[parts.length - 1];
-  return file.replace(".html", "");
+  var params = new URLSearchParams(window.location.search);
+  return params.get("slug") || "";
 }
 
 function getPostMeta(slug) {
@@ -283,7 +281,7 @@ function renderPost(slug, markdown, meta, prevPost, nextPost) {
       + '</a>'
     : '<div></div>';
 
-  var shareUrl = encodeURIComponent("https://danalytica.com/blog/posts/" + slug + ".html");
+  var shareUrl = encodeURIComponent("https://danalytica.com/blog/post.html?slug=" + slug);
   var shareTitle = encodeURIComponent(post.title);
 
   document.getElementById("post-wrap").innerHTML =

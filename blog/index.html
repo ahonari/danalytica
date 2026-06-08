@@ -245,7 +245,7 @@ function buildCard(post, isFeatured) {
     return '<span class="post-tag">' + t + '</span>';
   }).join('');
 
-  return '<a href="/blog/posts/' + post.slug + '.html" class="' + cls + '">'
+  return '<a href="/blog/post.html?slug=' + post.slug + '" class="' + cls + '">'
     + cover
     + bodyOpen
     + '<div class="post-meta">'
