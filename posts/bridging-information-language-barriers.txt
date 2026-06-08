@@ -74,7 +74,7 @@ However, immigrants often lack tools that simultaneously support both comprehens
 
 Such an approach is both empirically grounded and practically scalable, offering a meaningful contribution to improving integration outcomes.
 
-## References (APA Style)
+## References
 
 Alencar, A., & Deuze, M. (2017). News for assimilation or integration? Examining the functions of news in shaping acculturation experiences of immigrants in the Netherlands and Spain. *European Journal of Communication*.
 
@@ -98,4 +98,4 @@ Zhou, M., & Cai, G. (2002). Chinese language media in the United States: Immigra
 
 ---
 
-*This research note is the first in a series on immigrant integration. [Read our second post →](#) where we introduce StepIn, a practical application of this dual-path approach.*
+*This research note is the first in a series on immigrant integration. [Read our second post →](https://danalytica.com/blog/from-research-to-reality-how-stepin-applies-the-dual-path-approach) where we introduce StepIn, a practical application of this dual-path approach.*
