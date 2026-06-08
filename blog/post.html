@@ -327,7 +327,7 @@ if (!found) {
   var prev  = idx > 0 ? POSTS[idx - 1] : null;
   var next  = idx < POSTS.length - 1 ? POSTS[idx + 1] : null;
 
-  fetch("/blog/posts/" + slug + ".md")
+  fetch("/posts/" + slug + ".md")
     .then(function(r) {
       if (!r.ok) throw new Error("not found");
       return r.text();
