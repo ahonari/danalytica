@@ -39,36 +39,29 @@ StepIn is a Telegram bot that removes the trade-off between understanding and le
 /start
 │
 ▼
-
 │ MODE SELECTION │
-│ │
 │ 📰 News in my language 
-│ • Dutch news translated
-│ • 12 languages supported
-│ • Daily or on-demand
-│ │
+    • Dutch news translated
+    • 12 languages supported
+    • Daily or on-demand
 │ 🇳🇱 Learn Dutch through news
-│ • Simplified Dutch (A2/B1/B2)
-│ • Vocabulary translations 
-│ • Audio pronunciation
-│ │
+    • Simplified Dutch (A2/B1/B2)
+    • Vocabulary translations 
+    • Audio pronunciation
 │ 📋 Practical Guide
-│ • Step-by-step information
-│ • BSN, bank, insurance, school
-│ • Official links + your language
-
+    • Step-by-step information
+    • BSN, bank, insurance, school
+    • Official links + your language
 │
 ▼
 User receives information in their preferred language
 │
 ▼
-
 │ OUTCOMES │
-
-│ • Understanding of Dutch society
-│ • Gradual language acquisition
-│ • Confidence to take action
-│ • Faster integration 
+• Understanding of Dutch society
+• Gradual language acquisition
+• Confidence to take action
+• Faster integration 
 
 ```
 ## Path 1: News in Your Language
