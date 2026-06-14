@@ -3,8 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Statement | Danalytica</title>
-  <link rel="stylesheet" href="/style.css"> <!-- reuse your existing CSS -->
+  <title>Terms & Conditions | Danalytica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#091f26;--ink-mid:#0d2d38;--teal:#00cccc;--teal-dk:#005c77;--teal-lt:#33d9d9;
+      --green:#99d683;--white:#f4fafa;--muted:#6a9aaa;--border:rgba(0,204,204,.15);
+      --ff-h:'Syne',sans-serif;--ff-b:'DM Sans',sans-serif;--r:12px;--r-lg:20px;
+    }
+    body{
+      background:var(--ink);
+      color:var(--white);
+      font-family:var(--ff-b);
+      font-size:16px;
+      line-height:1.65;
+      padding:0;
+      margin:0;
+    }
+    .container{
+      width:min(900px,92vw);
+      margin:0 auto;
+      padding:60px 24px;
+    }
+    h1{
+      font-family:var(--ff-h);
+      font-size:2.5rem;
+      margin-bottom:24px;
+      color:var(--teal);
+    }
+    h2{
+      font-family:var(--ff-h);
+      font-size:1.3rem;
+      margin-top:32px;
+      margin-bottom:12px;
+      color:var(--white);
+    }
+    p,li{
+      color:rgba(255,255,255,0.7);
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+    ul{
+      margin-left:24px;
+      margin-bottom:20px;
+    }
+    li{
+      margin-bottom:6px;
+    }
+    .last-updated{
+      color:rgba(255,255,255,0.4);
+      font-size:0.85rem;
+      margin-bottom:32px;
+      padding-bottom:16px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    a{
+      color:var(--teal);
+      text-decoration:none;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+    .back-link{
+      display:inline-block;
+      margin-top:40px;
+      color:var(--teal);
+    }
+    hr{
+      border:none;
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin:40px 0 20px;
+    }
+    @media (max-width:768px){
+      .container{padding:40px 20px;}
+      h1{font-size:1.8rem;}
+      h2{font-size:1.2rem;}
+    }
+  </style>
 </head>
 <body>
   <div class="container" style="max-width: 800px; margin: 100px auto; padding: 40px 20px;">
@@ -61,6 +139,13 @@
     <p>If you have any questions about this Privacy Statement, please contact us at:</p>
     <p><strong>Danalytica</strong><br>
     hello@danalytica.com</p>
+    <hr>
+    <p style="font-size:0.8rem; text-align:center; color:rgba(255,255,255,0.3);">
+      &copy; 2025 Danalytica. All rights reserved.
+    </p>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="/" class="back-link">← Back to homepage</a>
+    </div>
   </div>
 </body>
 </html>
