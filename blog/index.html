@@ -174,25 +174,34 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:3rem 0 2
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
-    <ul class="footer-links">
-      <li><a href="/#services">Services</a></li>
-      <li><a href="/#work">Work</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#about">About</a></li>
-    </ul>
-    <p style="margin-bottom: 8px;">
-      &copy; 2025
-      <a href="#" style="display:inline-block;vertical-align:middle;margin:0 .4rem;line-height:0">
-        <img
-          src="/logo-small.svg"
-          alt="Danalytica"
-          style="height:20px;filter:brightness(0) invert(1);opacity:.55;"
-        >
-      </a>
-      All rights reserved.
-    </p>
+    <div class="footer-copy">
+      <p style="margin-bottom: 8px;">
+        &copy; 2025
+        <a href="#" style="display:inline-block;vertical-align:middle;margin:0 .4rem;line-height:0">
+          <img
+            src="/logo-small.svg"
+            alt="Danalytica"
+            style="height:20px;filter:brightness(0) invert(1);opacity:.55;"
+          >
+        </a>
+        All rights reserved.
+      </p>
+      
+      <!-- Legal Information with KVK and VAT -->
+      <div style="font-size: 0.7rem; color: rgba(255,255,255,0.4); line-height: 1.5; margin-top: 8px;">
+        <p>Danalytica | KVK: 67646344 | BTW/VAT: NL003340705B42</p>
+        <p>hello@danalytica.com</p>
+      </div>
+      
+      <!-- Legal Links (now left-aligned) -->
+      <div style="font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 12px;">
+        <a href="/privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; margin-right: 16px;" onmouseover="this.style.color='#00cccc'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Statement</a>
+        <a href="/terms.html" style="color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#00cccc'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Terms & Conditions</a>
+      </div>
+    </div>
   </div>
 </footer>
 
