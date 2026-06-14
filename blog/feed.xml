@@ -6,7 +6,31 @@
     <description>Practical writing on AI, ML, data engineering and building AI-native products.</description>
     <language>en-gb</language>
     <atom:link href="https://danalytica.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 08 Jun 2026 09:59:52 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 17:48:57 +0000</lastBuildDate>
 
+    <item>
+      <title>Bridging Information and Language Barriers: A Dual-Path Media Approach to Immigrant Integration</title>
+      <link>https://danalytica.com/blog/posts/bridging-information-language-barriers.html</link>
+      <guid isPermaLink="true">https://danalytica.com/blog/posts/bridging-information-language-barriers.html</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+      <category>Integration Research</category>
+      <description>A research note on how media consumption and language acquisition together shape immigrant integration outcomes.</description>
+    </item>
+    <item>
+      <title>From Research to Reality: How StepIn Applies the Dual-Path Approach</title>
+      <link>https://danalytica.com/blog/posts/from-research-to-reality-how-stepin-applies-the-dual-path-approach.html</link>
+      <guid isPermaLink="true">https://danalytica.com/blog/posts/from-research-to-reality-how-stepin-applies-the-dual-path-approach.html</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate>
+      <category>Product &amp; Impact</category>
+      <description>How we turned academic research into a practical tool — a Telegram bot that helps newcomers understand Dutch news and navigate life in the Netherlands.</description>
+    </item>
+    <item>
+      <title>&quot;When Science Becomes Political: Analyzing COVID‑19 and Climate Change Discourse on Twitter&quot;</title>
+      <link>https://danalytica.com/blog/posts/when-science-becomes-political-covid-climate-twitter.html</link>
+      <guid isPermaLink="true">https://danalytica.com/blog/posts/when-science-becomes-political-covid-climate-twitter.html</guid>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <category>Research Engineering</category>
+      <description>&quot;How a research team used computational methods to understand when the politicization of science on social media becomes problematic for democracy — and how we helped them get the data.&quot;</description>
+    </item>
   </channel>
 </rss>
