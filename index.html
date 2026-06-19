@@ -489,27 +489,38 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:3rem 0 2
         </a>
       </div>
       <div class="reveal">
-        <div class="contact-form">
+        <!-- Same form structure as StepIn, just with Danalytica styling -->
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnjrbejk" method="POST" novalidate>
           <div class="form-row">
-            <div class="form-group"><label for="fname">Name</label><input type="text" id="fname" placeholder="Your name"/></div>
-            <div class="form-group"><label for="femail">Email</label><input type="email" id="femail" placeholder="you@startup.com"/></div>
+            <div class="form-group">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="you@startup.com" required/>
+            </div>
           </div>
           <div class="form-group">
             <label for="ftopic">I&#8217;m interested in&hellip;</label>
-            <select id="ftopic">
+            <select id="ftopic" name="topic">
               <option value="">Select a service</option>
               <option>AI Agents &amp; LLM Integration</option>
               <option>ML Model Development</option>
               <option>Data Pipelines &amp; Engineering</option>
               <option>Analytics &amp; Dashboards</option>
               <option>Full Outsourced Team</option>
+              <option>SaaS Development</option>
               <option>Something Else</option>
             </select>
           </div>
-          <div class="form-group"><label for="fmsg">Tell us about your project</label><textarea id="fmsg" placeholder="What are you building? What&#8217;s the data challenge?"></textarea></div>
-          <button class="form-submit" id="form-btn">Send Message &#x2192;</button>
+          <div class="form-group">
+            <label for="fmsg">Tell us about your project</label>
+            <textarea id="fmsg" name="message" placeholder="What are you building? What&#8217;s the data challenge?" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message &#x2192;</button>
           <p class="form-note" id="form-note"></p>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -705,22 +716,77 @@ setTimeout(function() {
 }, 1800);
 
 /* ── CONTACT FORM ── */
-document.getElementById("form-btn").addEventListener("click", function() {
-  var name  = document.getElementById("fname").value.trim();
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  var form = this;
+  var note = document.getElementById("form-note");
+  var submitBtn = form.querySelector('.form-submit');
+  
+  // Clear previous message
+  note.textContent = "";
+  
+  // Basic validation
+  var name = document.getElementById("fname").value.trim();
   var email = document.getElementById("femail").value.trim();
-  var msg   = document.getElementById("fmsg").value.trim();
-  var note  = document.getElementById("form-note");
+  var msg = document.getElementById("fmsg").value.trim();
+  
   if (!name || !email || !msg) {
-    note.style.color = "#bf0202";
+    note.style.color = "#ff6b6b";
     note.textContent = "Please fill in your name, email, and message.";
     return;
   }
-  note.style.color = "#99d683";
-  note.textContent = "Thanks! We will be in touch within one business day.";
-  document.getElementById("fname").value = "";
-  document.getElementById("femail").value = "";
-  document.getElementById("fmsg").value = "";
-  document.getElementById("ftopic").value = "";
+  
+  // Email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    note.style.color = "#ff6b6b";
+    note.textContent = "Please enter a valid email address.";
+    return;
+  }
+  
+  // Show loading state
+  note.style.color = "#6a9aaa";
+  note.textContent = "Sending...";
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+  
+  // Send to Formspree
+  var formData = new FormData(form);
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return response.json().then(data => {
+        throw new Error(data.error || 'Something went wrong');
+      });
+    }
+  })
+  .then(data => {
+    // Success!
+    note.style.color = "#99d683";
+    note.textContent = "✓ Thanks! We will be in touch within one business day.";
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message →";
+  })
+  .catch(error => {
+    // Error
+    note.style.color = "#ff6b6b";
+    note.textContent = "❌ " + error.message + ". Please try again or email us directly at hello@danalytica.com";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message →";
+    
+    console.error("Form submission error:", error);
+  });
 });
 </script>
 </body>
